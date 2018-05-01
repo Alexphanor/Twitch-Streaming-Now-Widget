@@ -17,7 +17,7 @@
       width: 35px;
     }
 
-    #userInfo0, #userInfo1 {
+    .userInfo {
       background-image:
       linear-gradient(to bottom,
       rgb(140, 0, 255), lightgrey
@@ -31,13 +31,21 @@
       display: none;
     }
     
+    .link{
+      color: black;
+    }
+    a:hover {
+      text-decoration: none;
+      color: black;      
+    }
+    
     </style>
 
   </head>
   <body>
-    <div class="container">
+    <div class="container justify-content-center">
       <div class="row">
-        <div class="card">
+        <div class="card mx-auto">
           <img class="card-img-top" src="header.jpg" alt="">
           <div class="card-title">
               <h4 class="card-header text-center">Who's Streaming?</h4>
@@ -54,46 +62,62 @@
             </label>
           </div>
           <div class="card-body">
-            <div id="userInfo0" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2" href='google.com'>
-              <img id="img0" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder0">Username</div>
-              <div id="status0" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo1" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder1">Username</div>
-              <div id="status1" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo2" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img2" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder2">Username</div>
-              <div id="status2" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo3" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img3" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder3">Username</div>
-              <div id="status3" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo4" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img4" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder4">Username</div>
-              <div id="status4" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo5" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img5" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder5">Username</div>
-              <div id="status5" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo6" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img6" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder6">Username</div>
-              <div id="status6" class="mx-3">Status</div>             
-            </div>
-            <div id="userInfo7" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2">
-              <img id="img7" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
-              <div class="font-weight-bold align-bottom mx-3" id="placeholder7">Username</div>
-              <div id="status7" class="mx-3">Status</div>             
-            </div>            
+              <a href="#" target="_blank" class="link" id="userLink0">
+                <div id="userInfo0" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img0" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder0">Username</div>
+                <div id="status0" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink1">
+                <div id="userInfo1" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img1" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder1">Username</div>
+                <div id="status1" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink2">
+              <div id="userInfo2" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img2" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder2">Username</div>
+                <div id="status2" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink3">
+                <div id="userInfo3" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img3" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder3">Username</div>
+                <div id="status3" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink4">
+                <div id="userInfo4" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img4" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder4">Username</div>
+                <div id="status4" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink5">
+                <div id="userInfo5" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img5" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder5">Username</div>
+                <div id="status5" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink6">
+                <div id="userInfo6" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img6" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder6">Username</div>
+                <div id="status6" class="mx-3">Status</div>             
+              </div>
+            </a>
+            <a href="#" target="_blank" class="link" id="userLink7">
+                <div id="userInfo7" class="col-12 inline d-flex flex-row justify-content-center mb-1 py-2 userInfo">
+                <img id="img7" src="https://static-cdn.jtvnw.net/jtv_user_pictures/esl_sc2-profile_image-d6db9488cec97125-300x300.jpeg" alt="User" class="mx-3 rounded-circle img">          
+                <div class="font-weight-bold align-bottom mx-3" id="placeholder7">Username</div>
+                <div id="status7" class="mx-3">Status</div>             
+              </div>
+            </a>              
            </div>
         </div>
       </div>      

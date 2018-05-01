@@ -1,5 +1,5 @@
-let users = ['ESL_SC2', 'OgamingSC2', 'cretetion', 'freecodecamp',
- 'storbeck', 'habathcx', 'RobotCaleb', 'noobs2ninjas'];
+let users = ['ninja', 'Bungie', 'epicenter_ru', 'freecodecamp',
+ 'shroud', 'TSM_Myth', 'OverwatchLeague', 'noobs2ninjas'];
 
 // Creating Arrays to store the necesary data
 let nameArray = [];
@@ -50,17 +50,23 @@ async function getTwitchStreamsData() {
     })
   
     .then((data)=>{
-      console.log(data);
+      
       let userStatus = document.querySelector(`#status${i}`);
       let userInfo = document.querySelector(`#userInfo${i}`);
-      let userLink = document.querySelector('#img1'); ////////////
-     
+      let userLink = document.querySelector(`#userLink${i}`);
+
+      //getting the profile urls
+      linkArray.push(`https://www.twitch.tv/${users[i]}`); 
+      
+      //hooking the urls to the UI
+      userLink.setAttribute("href", linkArray[i]);
+
+
+      //generating the streamer status
       statusArray.push(
         data.stream ? data.stream.channel.status : 'offline'
       );
-      userStatus.textContent = statusArray[i];
-
-        
+      userStatus.textContent = statusArray[i];    
         // conditional of on or offline
         if (data.stream === null) {
           userInfo.classList.add("offline");
@@ -69,7 +75,6 @@ async function getTwitchStreamsData() {
             userInfo.classList.add("online");
                
       }
-      activateButtons(userInfo);
     })
 
     .catch((error)=>{
@@ -82,30 +87,39 @@ async function getTwitchStreamsData() {
   let online = document.querySelector('#option1');
   let offline = document.querySelector('#option2');
 
-function activateButtons(userInfo) {
-  for ( let i = 0; i < users.length; i++) {
+function activateButtons() {
+  const userInfo = document.querySelectorAll(".userInfo");
+
   
     all.addEventListener('click', ()=> {
-      userInfo.classList.remove('hidden');
-      userInfo.classList.add('d-flex');
+      for(let i = 0; i < userInfo.length; i++){
+      userInfo[i].classList.remove('hidden');
+      userInfo[i].classList.add('d-flex');
+      }
     })    
 
-    online.addEventListener('click', ()=> { 
-        if (userInfo.classList.contains("offline") === true){  
-          userInfo.classList.remove("d-flex");
-          userInfo.classList.add("hidden");
+    online.addEventListener('click', ()=> {
+      for(let i = 0; i < userInfo.length; i++){
+        if (userInfo[i].classList.contains("offline") === true){  
+          userInfo[i].classList.remove("d-flex");
+          userInfo[i].classList.add("hidden");
         } else {
-          userInfo.classList.add('d-flex');
+          userInfo[i].classList.add('d-flex');
         }
+      }
     })
 
-    offline.addEventListener('click', ()=> { 
-      if (userInfo.classList.contains("online") === true){  
-        userInfo.classList.remove("d-flex");
-        userInfo.classList.add("hidden");
-      } else {
-        userInfo.classList.add('d-flex');
+    offline.addEventListener('click', ()=> {
+      for(let i = 0; i < userInfo.length; i++){
+        if (userInfo[i].classList.contains("online") === true){  
+          userInfo[i].classList.remove("d-flex");
+          userInfo[i].classList.add("hidden");
+        } else {
+          userInfo[i].classList.add('d-flex');
+        }
       }
-  })
-  }
+    })
 }
+
+activateButtons()
+
